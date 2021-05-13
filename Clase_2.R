@@ -14,3 +14,17 @@ a<- read_csv("https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/
 plantas  <-  readr :: read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
 acciones  <-  readr :: read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv')
 amenazas  <-  readr :: read_csv ('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv')
+
+data("msleep")
+view(msleep)
+Tabla <- msleep %>% group_by(vore) %>%  
+  summarise_at("sleep_total",.funs=list(Mean=mean,SD=sd)) %>% 
+  arrange(desc(Mean)) %>% 
+  dplyr::filter(!is.na(vore)) %>% 
+  arrange(desc(Mean))
+
+
+msleep_long<-msleep %>% dplyr::select(name,vore,sleep_total,brainwt)
+
+
+
