@@ -19,11 +19,11 @@ del [siguiente  repositorio](https://github.com/rfordatascience/tidytuesday) git
 
 
 ```{r,echo=FALSE, message=FALSE, warning=FALSE}
-plants<- read.csv("C:/Users/mhrosas/Documents/GitHub/tidytuesday/data/2020/2020-08-18/plants.csv", sep=";")
-actions<- read.csv("C:/Users/mhrosas/Documents/GitHub/tidytuesday/data/2020/2020-08-18/actions.csv", sep=";")
-threats<- read.csv("C:/Users/mhrosas/Documents/GitHub/tidytuesday/data/2020/2020-08-18/threats.csv", sep=";")
+plantas  <-  readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+acciones  <-  readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv')
+amenazas  <-  readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv')
 ```
 
 ## Datos de Sudamérica
 
-El número de especies que hay en sudamerica en la base de datos es de `r plants %>% dplyr::filter(continent=="South America") %>% nrow()` especies
+El número de especies que hay en sudamerica en la base de datos es de `r plantas %>% dplyr::filter(continent=="South America") %>% nrow()` especies
